@@ -1,28 +1,27 @@
 import java.util.Scanner;
 
-public class ADN {
+public class ADNtranscription {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
 
         while (continuar) {
-            // Solicitar de cadena ADN
-            System.out.print("Ingrese la cadena de ADN (o 'Q' para salir): ");
+
+            System.out.print("Ingrese la cadena de ADN o 'Q' para salir: ");
             String dnaStrand = scanner.nextLine();
 
             if (dnaStrand.equalsIgnoreCase("Q")) {
                 continuar = false;
             } else {
-               
-                String rnaStrand = transcribeToRna(dnaStrand);
 
-                // Mostrar resultado
-                System.out.println("Resultado de la cadena transcrita: " + rnaStrand);
+                String rnaStrand = transcriptToRna(dnaStrand);
+
+                System.out.println("Resultado: " + rnaStrand);
             }
         }
     }
 
-    private static String transcribeToRna(String dnaStrand) {
+    private static String transcriptToRna(String dnaStrand) {
         StringBuilder rnaStrand = new StringBuilder();
 
         for (char nucleotide : dnaStrand.toCharArray()) {
@@ -40,8 +39,8 @@ public class ADN {
                     rnaStrand.append('U');
                     break;
                 default:
-                    // Evitar caracteres no validos
-                    System.out.println("Error: Caracter no válido en la cadena de ADN.");
+
+                    System.out.println("Error: Caracter no válido." );
                     System.exit(1);
             }
         }
