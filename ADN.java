@@ -6,17 +6,17 @@ public class ADN {
         boolean continuar = true;
 
         while (continuar) {
-            // Solicitar al usuario que ingrese la cadena de ADN
+            // Solicitar de cadena ADN
             System.out.print("Ingrese la cadena de ADN (o 'Q' para salir): ");
             String dnaStrand = scanner.nextLine();
 
             if (dnaStrand.equalsIgnoreCase("Q")) {
                 continuar = false;
             } else {
-                // Llamar a la función para obtener la cadena de ARN transcrita
+               
                 String rnaStrand = transcribeToRna(dnaStrand);
 
-                // Mostrar la cadena de ARN resultante
+                // Mostrar resultado
                 System.out.println("Resultado de la cadena transcrita: " + rnaStrand);
             }
         }
@@ -40,7 +40,7 @@ public class ADN {
                     rnaStrand.append('U');
                     break;
                 default:
-                    // Manejar caracteres no válidos en la cadena de ADN
+                    // Evitar caracteres no validos
                     System.out.println("Error: Caracter no válido en la cadena de ADN.");
                     System.exit(1);
             }
